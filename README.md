@@ -42,6 +42,3 @@ Created a root route / that will query the Mongo database and pass the mars data
 
 Created a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements.
 
-A screenshot of the index.html page
-
-![Featured Mars Image](Instructions/Images/screencapture.png)
