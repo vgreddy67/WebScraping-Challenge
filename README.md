@@ -28,3 +28,20 @@ Used Pandas to convert the data to a HTML table string.
 
    Appended the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere. 
    ![Featured Mars Image](Instructions/Images/final_app_part2.png)
+
+Step 2 - MongoDB and Flask Application:
+
+Used MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
+
+Converted the Jupyter notebook into a Python script called scrape_mars.py with a function called scrape that will execute all of the scraping code from above and return one Python dictionary containing all of the scraped data.
+
+Next, created a route called /scrape that will import scrape_mars.py script and calls the scrape function.
+
+Stored the return value in Mongo as a Python dictionary.
+Created a root route / that will query the Mongo database and pass the mars data into an HTML template to display the data.
+
+Created a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements.
+
+A screenshot of the index.html page
+
+![Featured Mars Image](Instructions/Images/screencapture.png)
