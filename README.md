@@ -3,6 +3,7 @@ Its a web application that scrapes various websites for data related to the Miss
 
 Step 1 - Scraping:
 Initial scraping done using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
+
   NASA Mars News:
     Scrapes the NASA Mars News Site and collects the latest News Title and Paragraph Text. Assigned the text to variables that can be referenced later.
   JPL Mars Space Images - Featured Image:
