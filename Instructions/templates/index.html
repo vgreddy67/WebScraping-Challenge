@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <!-- Latest News -->
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="box">
+              <h2 font-size='35px'>Latest Mars News</h2>
+              <h3 class="title">{{marsdata.news_title}}</h3>
+              <p font-size='25px'>{{marsdata.news_p}}</p>
+            </div>
+          </div>
+      </div>
+      <!-- Featured image -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <h3>Featured Mars Image</h3>
+            <img src="{{marsdata.featured_img_url}}" alt="Featured Image" style="max-width:100%; max-height:auto;" >
+          </div>
+
+          <!-- weather -->
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body text-white bg-dark">
+                <h6 class="card-title">
+                  Latest Tweet
+                </h6>
+                <p class="card-text">{{marsdata.mars_weather}}</p>
+              </div> 
+            </div>
+            <br>
+            <h3>Mars Facts</h3>
+            <div style="max-width: 450px; max-height:150 px; font-size: 15px; margin-bottom: 65px">
+                {{marsdata.mars_facts|safe}}
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Hemispheres -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+              {% for hemi in marsdata.hemispheres_images %}
+                <div class="card" style="width: 20rem;">
+                  <div class="card-body">
+                        <!-- <h4 class="card-title">{{hemi.title}}</h4> -->
+                    <img src="{{hemi.img_url}}" alt="hemi">
+                    <h6 class="card-subtitle mb-2 text-muted">{{hemi.title}}</h6>
+                  </div>
+                </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
