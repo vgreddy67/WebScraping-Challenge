@@ -10,7 +10,7 @@ Initial scraping done using Jupyter Notebook, BeautifulSoup, Pandas, and Request
     
   JPL Mars Space Images - Featured Image:
     Used splinter to navigate the site and find the image url for the current Featured Mars Image and assigned the url string to a variable called featured_image_url.Found the image url to the full size .jpg image.
-    ![]()
+    ![Featured Mars Image]()
 
   Mars Weather:
     Visited the Mars Weather twitter account and scraped the latest Mars weather tweet from the page. Saved the tweet text for the weather report as a variable called mars_weather.
